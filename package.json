@@ -1,0 +1,12 @@
+{
+  "name": "ember-training",
+  "version": "1.0.0",
+  "description": "Learning Ember JS",
+  "main": "index.js",
+  "repository": "git@github.com:KIMO-HCK/EMBER-Training.git",
+  "author": "kimobrian <brian.kimokoti@andela.com>",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ]
+}
