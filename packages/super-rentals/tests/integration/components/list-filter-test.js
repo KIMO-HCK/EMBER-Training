@@ -7,13 +7,14 @@ import { resolve } from 'rsvp';
 const ITEMS = [{city: 'San Francisco'}, {city: 'Portland'}, {city: 'Seattle'}];
 const FILTERED_ITEMS = [{city: 'San Francisco'}];
 
-module('Integration | Component | list-filter', function(hooks) {
+module('Integration | Component | rental-listing', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('should initially load all listings', function (assert) {
+  test('should initially load all listings', async function (assert) {
     // we want our actions to return promises,
     //since they are potentially fetching data asynchronously
     this.set('filterByCity', () => resolve({ results: ITEMS }));
+
     // with an integration test,
     // you can set up and use your component in the same way your application
     // will use it.
@@ -33,6 +34,7 @@ module('Integration | Component | list-filter', function(hooks) {
       assert.equal(this.element.querySelectorAll('.city').length, 3);
       assert.equal(this.element.querySelector('.city').textContent.trim(), 'San Francisco');
     });
+
   });
 
   test('should update with matching listings', async function (assert) {
