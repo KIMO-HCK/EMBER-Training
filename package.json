@@ -1,0 +1,13 @@
+{
+  "name": "EMBER-Training",
+  "version": "1.0.0",
+  "description": "Ember training tutorial",
+  "main": "index.js",
+  "repository": "git@work:KIMO-HCK/EMBER-Training.git",
+  "author": "O'Brian",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}

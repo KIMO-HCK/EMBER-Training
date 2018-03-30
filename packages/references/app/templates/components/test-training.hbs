@@ -1,0 +1,15 @@
+This is the first component
+
+<ul>
+  {{#each todos as |todo|}}
+    <li>{{todo.title}} : {{todo.isDone}}</li>
+  {{/each}}
+</ul>
+<hr/>
+<ul>
+ {{#each titles as |title|}}
+  <li>{{ title }}</li>
+ {{/each}}
+</ul>
+<div>Wife Pets: {{wifePets}}</div>
+{{yield}}
