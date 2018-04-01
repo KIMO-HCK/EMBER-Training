@@ -1,0 +1,14 @@
+<h3>User #{{model.user.id}}</h3>
+<hr/>
+<div>{{model.user.name}}</div>
+<div>{{model.user.username}}</div>
+<div>{{model.user.email}}</div>
+<hr/>
+<h4>
+{{#link-to "test-route"}}
+  Go to Parent Route
+{{/link-to}}
+</h4>
+{{#each model.numbers as |num|}}
+  <span>{{num}}</span>
+{{/each}}

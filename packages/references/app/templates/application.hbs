@@ -1,4 +1,10 @@
 <h2>EMBER TRAINING</h2>
-
-{{test-training}}
+<nav>
+{{#link-to "test-route"}}
+  TEST ROUTE
+{{/link-to}} | 
+{{#link-to "index"}}
+  HOME
+{{/link-to}}
+</nav>
 {{outlet}}

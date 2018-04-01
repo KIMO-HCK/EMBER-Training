@@ -1,0 +1,16 @@
+<h2>TEST ROUTING</h2>
+{{test-training}}
+<h4>
+  Users' List
+</h4>
+
+<ul>
+{{#each model as |user|}}
+  <li>
+    {{#link-to "test-route.child" user.id}}
+      {{user.id}}:{{user.username}}
+    {{/link-to}}
+  </li>
+{{/each}}
+</ul>
+{{outlet}}
