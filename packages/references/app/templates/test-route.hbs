@@ -3,14 +3,34 @@
 <h4>
   Users' List
 </h4>
-
-<ul>
-{{#each model as |user|}}
-  <li>
-    {{#link-to "test-route.child" user.id}}
-      {{user.id}}:{{user.username}}
-    {{/link-to}}
-  </li>
-{{/each}}
-</ul>
-{{outlet}}
+<div class='row'>
+  <div class='col-lg-12'>
+    <div class='row'>
+      <div class='col-lg-6'>
+        <ul>
+        {{#each model.users as |user|}}
+          <li>
+            {{#link-to "test-route.child" user.id}}
+              {{user.id}}:{{user.username}}
+            {{/link-to}}
+          </li>
+        {{/each}}
+        </ul>
+      </div>
+      <div class='col-lg-6'>{{outlet}}</div>
+    </div>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-lg-6'>
+    {{#each model.posts as |post|}}
+      {{#blog-post title=post.title}}
+        {{post.body}}
+      {{/blog-post}}
+      <hr/>
+      {{!-- either foo-component or bar-component --}}
+      {{component post.componentName post=post}}
+      <hr/>
+    {{/each}}
+  </div>
+</div>

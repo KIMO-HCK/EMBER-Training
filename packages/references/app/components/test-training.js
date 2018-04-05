@@ -41,9 +41,30 @@ export default Component.extend({
   titles: computed('todos.[]', function() {
     let todos = this.get('todos');
     return todos.mapBy('title');
-  })
+  }),
   // incomplete: computed('todos.@each.isDone', function() {
   //   let todos = this.get('todos');
   //   return todos.filterBy('isDone', false);
   // })
+  willRender() {
+    // Set the "categories" property to a JavaScript object
+    // with the category name as the key and the value a list
+    // of products.
+    this.set('categories', {
+      'Bourbons': ['Bulleit', 'Four Roses', 'Woodford Reserve'],
+      'Ryes': ['WhistlePig', 'High West']
+    });
+  },
+  actions: {
+    toggleBody() {
+      this.toggleProperty('isShowingBody');
+    },
+    bandDidChange(newValue) {
+      console.log(newValue);
+    }
+  },
+  isShowingBody: false,
+  title: "Show Body",
+  body: " This is the section Body",
+  favoriteBand: "Linkin Park"
 });

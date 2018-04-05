@@ -1,9 +1,36 @@
-COMPONENT A
-<hr/>
-<ul>
- {{#each titles as |title|}}
-  <li>{{ title }}</li>
- {{/each}}
-</ul>
-<hr/>
-<div>Wife Pets: {{wifePets}}</div>
+<div class='row'>
+  <div class='col-lg-6' class='vertical-line'>
+    COMPONENT A
+    <hr/>
+    <ul>
+    {{#each titles as |title|}}
+      <li>{{ title }}</li>
+    {{/each}}
+    </ul>
+    <hr/>
+    <div>Wife Pets: {{wifePets}}</div>
+
+    <ul>
+      {{#each-in categories as |category products|}}
+        <li>{{category}}
+          <ol>
+            {{#each products as |product|}}
+              <li>{{product}}</li>
+            {{/each}}
+          </ol>
+        </li>
+      {{/each-in}}
+    </ul>
+    <hr/>
+  </div>
+  <div class='col-lg-6'>
+    <h2 class="heading">Actions</h2>
+    <h3><button class="btn btn-primary" {{action "toggleBody"}}>{{title}}</button></h3>
+    {{#if isShowingBody}}
+      <p>{{{body}}}</p>
+    {{/if}}
+    <label>What's your favorite band?</label>
+    <input type="text" value={{favoriteBand}} onblur={{action "bandDidChange" value="target.value"}} class='form-control'/>
+    <hr/>
+  </div>
+</div>

@@ -4,7 +4,7 @@ import RSVP from 'rsvp';
 export default Route.extend({
   model(params) {
     console.log('>>>>', this.paramsFor(this.routeName));
-    let users = this.modelFor('test-route');
+    let users = this.modelFor('test-route').users;
     let usersLength = users.length;
     let numbers = [ 0,1,2,3,4,5,6,7,8,9 ]
     let userId = +params.child_id;

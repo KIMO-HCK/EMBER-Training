@@ -1,0 +1,12 @@
+.vertical-line {
+  border-left: thick solid #ff0000;
+  border-right: thick solid #ff0000;
+}
+
+.zoom {
+  color: red;
+}
+
+.putt {
+  color: green;
+}

@@ -1,4 +1,5 @@
 import Route from '@ember/routing/route';
+import RSVP from 'rsvp';
 
 export let users = [
     {
@@ -63,8 +64,32 @@ export let users = [
     }
 ];
 
+let posts = [
+  { 
+    'author':'Brian Kim',
+    'title': 'bar-component: Post Number One',
+    'body':"This is the post's bosy",
+    'componentName': 'bar-component'
+  },
+  {
+    'author':'Jake Archibad',
+    'title': 'foo-component: Post Number Two',
+    'body':"This is the post's bosy",
+    'componentName': 'foo-component'
+  },
+  {
+    'author':'Ken Kenny',
+    'title': 'bar-component: Post Number Three',
+    'body':"This is the post's body",
+    'componentName': 'bar-component'
+  }
+]
+
 export default Route.extend({
   model() {
-    return users;
+    return RSVP.hash({
+      users,
+      posts
+    })
   }
 });

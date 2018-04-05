@@ -1,0 +1,7 @@
+<h4>SEND MESSAGE</h4>
+{{#button-with-confirmation
+    text="Click to send your message."
+    onConfirm=(action "sendMessage" "info")
+    as |confirmValue|}}
+  {{input value=confirmValue}}
+{{/button-with-confirmation}}
