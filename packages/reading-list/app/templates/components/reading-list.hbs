@@ -1,0 +1,13 @@
+{{input type="text" value=title class="form-control" enter="onEnter" placeholder="Book Title"}}
+<br/>
+<h4>Books List</h4>
+<ul class="list-group">
+{{#each books as |book|}}
+  <li class="list-group-item">
+  {{ book.title }}
+  <span class='pull-right remove badge' {{action "removeBook" book on="click"}} style="cursor: pointer" title="Remove Book">
+    X
+  </span>
+  </li>
+{{/each}}
+</ul>
