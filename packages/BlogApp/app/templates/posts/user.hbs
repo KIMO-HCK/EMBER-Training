@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="vol-lg-8">
+    <ul class="list-group">
+      {{#each model as |post index|}}
+      <li class="list-group-item">
+        <h4>{{index}}. {{#link-to "posts.single" post.id}} {{post.title}} {{/link-to}}
+        </h4>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
